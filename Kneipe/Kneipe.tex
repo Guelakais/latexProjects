@@ -1,0 +1,70 @@
+\documentclass[%
+	BCOR=8.25mm,         % Bindekorrektur
+	DIV=12,              % Satzspiegel
+	parskip=half,				 % Abstand zwischen Absätzen
+	bibliography=totoc,	 % Literaturverzeichnis im Inhaltsverzeichnis
+	headsepline=on,      % Trennlinie Kolumnentitel
+	]{scrbook}
+
+%% Präambel
+\usepackage[english, ngerman]{babel} % deutsche typogr. Regeln + Trenntabelle
+\usepackage[T1]{fontenc}             % interner TeX-Font-Codierung
+\usepackage{lmodern}                 % Font Latin Modern
+\usepackage[utf8]{inputenc}          % Font-Codierung der Eingabedatei
+\usepackage[babel]{csquotes}         % Anführungszeichen
+\usepackage{graphicx}                % Graphiken
+\usepackage{booktabs}                % Tabellen schöner
+\usepackage{listingsutf8}            % Listings mit Einstellungen
+\lstset{basicstyle=\small\ttfamily,
+	tabsize=2,
+	basewidth={0.5em,0.45em},
+	extendedchars=true}
+\usepackage{amsmath}	               % Mathematik
+\usepackage[pdftex]{hyperref}       
+\hypersetup{
+	bookmarksopen=true,
+	bookmarksopenlevel=3,
+	colorlinks,
+	citecolor=blue,
+	linkcolor=blue,
+}
+\usepackage{scrhack}								 % unterdrückt Fehlermeldung von listings
+
+%% Nummerierungstiefen
+\setcounter{tocdepth}{3}             % 3 Stufen im Inhaltsverzeichnis
+\setcounter{secnumdepth}{3} 		     % 3 Stufen in Abschnittnummerierung
+
+% ----------------------------------------------------------------------------
+\begin{document}
+
+\frontmatter
+
+%% Titelseite
+\begin{titlepage}
+	\begin{center}
+	\textsc{\Large Sommerkreuzkneipe mit Giessener Burschenschaft Wartburg}\\[2cm]
+	verfasst von\\
+	\textbf{Steven H. G. Fleischer}\\ [1.5cm] 
+	Mai 2022
+	\end{center}
+	\vfill
+	\begin{tabular}{cccc}
+		Chargen: & Senior & Consenior & Fuxmajor\\
+		K.St.V. Nassovia & Steven H.G. Fleischer &  &  \\
+		Giessener Burschenschaft Wartburg &  &  
+	\end{tabular}
+\end{titlepage}
+
+%% Verzeichnissse
+\tableofcontents
+
+\mainmatter 
+\pagestyle{headings}
+
+
+\input{Offizium}
+\input{Inoffizium}
+
+
+\end{document}
+% ----------------------------------------------------------------------------
