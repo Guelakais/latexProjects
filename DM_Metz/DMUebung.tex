@@ -1,0 +1,92 @@
+
+\documentclass[%
+	BCOR=8.25mm,         % Bindekorrektur
+	DIV=12,              % Satzspiegel
+	parskip=half,				 % Abstand zwischen Absätzen
+	bibliography=totoc,	 % Literaturverzeichnis im Inhaltsverzeichnis
+	headsepline=on,      % Trennlinie Kolumnentitel
+	]{scrbook}
+
+%% Präambel
+\usepackage{enumitem}
+\usepackage{fixltx2e}
+\usepackage[english, ngerman]{babel} % deutsche typogr. Regeln + Trenntabelle
+\usepackage[T1]{fontenc}             % interner TeX-Font-Codierung
+\usepackage{lmodern}                 % Font Latin Modern
+\usepackage[utf8]{inputenc}          % Font-Codierung der Eingabedatei
+\usepackage[babel]{csquotes}         % Anführungszeichen
+\usepackage{graphicx}                % Graphiken
+\usepackage{booktabs}                % Tabellen schöner
+\usepackage{listingsutf8}            % Listings mit Einstellungen
+\lstset{basicstyle=\small\ttfamily,
+	tabsize=2,
+	basewidth={0.5em,0.45em},
+	extendedchars=true}
+\usepackage{amsmath}	               % Mathematik
+\usepackage[pdftex]{hyperref}       
+\hypersetup{
+	bookmarksopen=true,
+	bookmarksopenlevel=3,
+	colorlinks,
+	citecolor=blue,
+	linkcolor=blue,
+}
+\usepackage{scrhack}								 % unterdrückt Fehlermeldung von listings
+
+%% Nummerierungstiefen
+\setcounter{tocdepth}{3}             % 3 Stufen im Inhaltsverzeichnis
+\setcounter{secnumdepth}{3} 		     % 3 Stufen in Abschnittnummerierung
+
+% ----------------------------------------------------------------------------
+\begin{document}
+
+\frontmatter
+
+%% Titelseite
+\begin{titlepage}
+	\begin{center}
+	\textsc{\Large Diskrete Mathematik Übungen}\\Studiengang Informatik\\[2cm]
+	verfasst von\\
+	\textbf{Steven H. G. Fleischer}\\ [1.5cm] 
+	Mai 2022
+	\end{center}
+	\vfill
+\end{titlepage}
+
+%% Erklärung
+\pagestyle{empty}
+\begin{quote}
+	\vspace*{4cm}
+
+	\begin{center}
+		\textbf{\Large\sffamily Eidesstattliche Erklärung}
+	\end{center}
+
+	Hiermit versichere ich, die vorliegende Arbeit selbstständig und unter
+	ausschließlicher Verwendung der angegebenen Literatur und Hilfsmittel
+	erstellt zu haben.
+	Die Arbeit wurde bisher in gleicher oder ähnlicher Form keiner anderen
+	Prüfungsbehörde vorgelegt und auch nicht veröffentlicht.
+
+	\vspace{2em}
+
+	Gießen, 07.05.2022
+\end{quote}
+
+%% Zusammenfassung
+
+
+%% Verzeichnissse
+\tableofcontents
+
+\mainmatter 
+\pagestyle{headings}
+\input{Logik}
+\input{Funktionen}
+
+
+\backmatter 
+
+
+\end{document}
+% ----------------------------------------------------------------------------

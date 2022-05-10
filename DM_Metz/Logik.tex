@@ -1,0 +1,283 @@
+\chapter{Logik}
+\section{Ausagenlogische Formeln und Wharheitstafeln}
+\subsection{Erfüllbarkeit}
+Schreiben Sie für die folgenden zusammengesetzten Aussagen
+(aussagenlogische Formeln) $\Phi$\textsubscript{1} bis $\Phi$\textsubscript{4}
+die Wahrheitstafeln auf. Welche der Formeln sind erfüllbar? Gibt es es Tautologien
+oder Kontradiktionen?
+\begin{quote}
+    \begin{enumerate}[label = {$\Phi$\textsubscript{\arabic*} =}]
+        \item (A $\vee$ ($\neg$B))$\wedge$A\\
+            {\tiny
+            \begin{tabular}{cccc}
+                AB & ($\neg$B) & A$\vee$($\neg$B) & (A $\vee$ ($\neg$B))$\wedge$A\\
+                00 & 1 & 1 & 0 \\
+                01 & 0 & 0 & 0 \\
+                10 & 1 & 1 & 1 \\
+                11 & 0 & 1 & 1 \\
+            \end{tabular}
+            Die Formal ist Erfüllbar, da sich in zwei Zeilen der Wahrheitstafel
+            w ergibt, ist die Formel sogar für zwei unterschiedliche Belegungen
+            der atomaren Variablen erfüllbar.}
+        \item A $\vee$ ($\neg$(A$\wedge$B))\\
+            {\tiny
+            \begin{tabular}{ccc}
+                AB & ($\neg$(A$\wedge$B)) & A $\vee$ ($\neg$(A$\wedge$B))\\
+                00 & 1 & 1\\
+                01 & 1 & 1\\
+                10 & 1 & 1\\
+                11 & 1 & 1\\
+            \end{tabular}
+            Erfüllbar und Tautologie, da die Formel für jede Belegung Wahr ist}
+        \item (A$\vee$($\neg$B))$\wedge$($\neg$A)\\
+            {\tiny
+            \begin{tabular}{ccc}
+                AB & (A$\vee$($\neg$B)) & (A$\vee$($\neg$B))$\wedge$($\neg$A)\\
+                00 & 1 & 1\\
+                01 & 0 & 0\\
+                10 & 1 & 0\\
+                11 & 1 & 0\\
+            \end{tabular}
+            Erfüllbar, da die Formel für eine Belegung der Atomaren Aussagen ein wahr
+            ist.}
+        \item (A$\wedge$B) $\wedge$(($\neg$A)$\vee$($\neg$B))\\
+            {\tiny
+            \begin{tabular}{ccc}
+                AB & (A$\wedge$B) $\wedge$(($\neg$A)$\vee$($\neg$B))\\
+                00 & 0 \\
+                01 & 0 \\
+                10 & 0 \\
+                11 & 0 \\
+            \end{tabular}
+            Kontradiktion, da die Formel für keine der atomaren Aussagen wahr ist}
+    \end{enumerate}
+\end{quote}
+\newpage
+\subsection{logische Äquivalenzen}
+Beweisen Sie mit Wahrheitstafeln die folgenden logischen Äquivalenzen
+\begin{enumerate}
+    \item (A$\leftrightarrow$B) = ((A$\to$B)$\wedge$(B$\to$A))\\
+        {\tiny
+        \begin{tabular}{ccc}
+            AB & (A$\leftrightarrow$B) & ((A$\to$B)$\wedge$(B$\to$A))\\
+            00 & 1 & 1 \\
+            01 & 0 & 0 \\
+            10 & 0 & 0 \\
+            11 & 1 & 1 \\
+        \end{tabular}
+        }
+    \item (A$\to$B) = ($\neg$A$\vee$B)\\
+        {\tiny
+        \begin{tabular}{cccc}
+            AB & (A$\to$B) & ($\neg$A$\vee$B) & (A$\to$B) = ($\neg$A$\vee$B)\\
+            00 & 1 & 1 & 1\\
+            01 & 1 & 1 & 1\\
+            10 & 0 & 0 & 0\\
+            11 & 1 & 1 & 1\\
+        \end{tabular}
+        }
+    \item (A$\vee$B) = ($\neg$($\neg$A$\wedge$$\neg$B))\\
+    {\tiny
+    \begin{tabular}{cccc}
+        AB & (A$\vee$B) & ($\neg$($\neg$A$\wedge$$\neg$B))\\
+        00 & 0 & 0\\
+        01 & 1 & 1\\
+        10 & 1 & 1\\
+        11 & 1 & 1\\
+    \end{tabular}
+    }
+\end{enumerate}
+\subsection{Tautologien}
+\begin{enumerate}
+    \item A$\vee$($\neg$A) \\ Satz vom ausgeschlossenen Dritten\\
+        {\tiny
+        \begin{tabular}{cc}
+            A & A$\vee$($\neg$A)\\
+            0 & 1\\
+            1 & 1\\
+        \end{tabular}
+        Tautologie, weil Formel für jede Aussage wahr ist}
+    \item $\neg$(A$\wedge$($\neg$A)) \\ Satz vom Widerspruch\\
+        {\tiny
+        \begin{tabular}{cc}
+            A & $\neg$(A$\wedge$($\neg$A))\\
+            0 & 1 \\
+            1 & 1 \\
+        \end{tabular}
+        Tautologie, weil Formel für jede Aussage wahr ist}
+    \item ($\neg$($\neg$A)) $\leftrightarrow$ A \\ Satz von der doppelten Verneinung\\
+        {\tiny
+        \begin{tabular}{cc}
+            A & ($\neg$($\neg$A)) $\leftrightarrow$ A\\
+            0 & 1 \\
+            1 & 1 \\
+        \end{tabular}
+        Tautologie, weil Formel für jede Aussage wahr ist}
+    \item ($\neg$(A$\wedge$B)) $\leftrightarrow$ (($\neg$A)$\vee$($\neg$B)) \\
+        {\tiny
+        \begin{tabular}{cccc}
+            AB & ($\neg$(A$\wedge$B)) & $\leftrightarrow$ (($\neg$A)$\vee$($\neg$B))
+            & ($\neg$(A$\wedge$B)) $\leftrightarrow$ (($\neg$A)$\vee$($\neg$B))\\
+            00 & 1 & 1 & 1 \\
+            01 & 1 & 1 & 1 \\
+            10 & 1 & 1 & 1 \\
+            11 & 0 & 0 & 1 \\
+        \end{tabular}
+        \\
+        Tautologie, da die Teilaussagen immer zueinander equivalente Aussagen liefern\\
+        }
+        ($\neg$(A$\vee$B)) $\leftrightarrow$ (($\neg$A)$\wedge$($\neg$B)) \\
+        {\tiny
+        \begin{tabular}{cccc}
+            AB & ($\neg$(A$\vee$B)) & (($\neg$A)$\wedge$($\neg$B)) &
+            ($\neg$(A$\vee$B)) $\leftrightarrow$ (($\neg$A)$\wedge$($\neg$B))\\
+            00 & 1 & 1 & 1\\
+            01 & 0 & 0 & 1\\
+            10 & 0 & 0 & 1\\
+            11 & 0 & 0 & 1\\
+        \end{tabular}
+        \\
+        Tautologie, da die Teilaussagen immer zueinander equivalente Aussagen liefern}\\
+        Sätze von De Morgan
+    \item ((A$\to$B)$\wedge$A)$\to$B \\ Abtrennungsregel\\
+    {\tiny
+    \begin{tabular}{cccc}
+        AB & (A$\to$B) & ((A$\to$B)$\wedge$A) & ((A$\to$B)$\wedge$A)$\to$B\\
+        00 & 1 & 0 & 1\\
+        01 & 0 & 0 & 0\\
+        10 & 1 & 1 & 1\\
+        11 & 1 & 1 & 1\\
+    \end{tabular}
+    \\Keine Tautologie, da die Formel nicht für jede Eingabe wahr ist}
+    \item ((A$\to$B)$\wedge$($\neg$B))$\to$($\neg$A) \\ Widerlegungsregel\\
+    {\tiny
+    \begin{tabular}{ccccc}
+        AB & ($\neg$B) & (A$\to$B) & ((A$\to$B)$\wedge$($\neg$B)) & 
+        ((A$\to$B)$\wedge$($\neg$B))$\to$($\neg$A)\\
+        00 & 1 & 1 & 1 & 1\\
+        01 & 0 & 1 & 0 & 1\\
+        10 & 1 & 0 & 0 & 1\\
+        11 & 0 & 1 & 0 & 1\\
+    \end{tabular}
+    \\Ist eine Tautologie, da die Formel für jede Eingabe wahr ist}\\
+    \item ((A$\to$B)$\wedge$(B$\to$C))$\to$(A$\to$B) \\ Kettenschlußregel\\
+    {\tiny
+    \begin{tabular}{ccccc}
+        ABC & (A$\to$B) & (B$\to$C) & ((A$\to$B)$\wedge$(B$\to$C)) &
+        ((A$\to$B)$\wedge$(B$\to$C))$\to$(A$\to$B)\\
+        000 & 1 & 1 & 1 & 1\\
+        001 & 1 & 1 & 1 & 1\\
+        010 & 1 & 0 & 0 & 1\\
+        011 & 1 & 1 & 1 & 1\\
+        100 & 0 & 1 & 0 & 0\\
+        101 & 0 & 1 & 0 & 1\\
+        110 & 1 & 0 & 0 & 0\\
+        111 & 1 & 1 & 1 & 1\\
+    \end{tabular}
+    \\ Erfüllbar und keine Tautologie, da die Formel nicht für jede Eingabe
+    wahr ist}\\
+\end{enumerate}
+\subsection{technische Dokumente}
+{
+    \tiny
+    \begin{tabular}{ccccc}
+        LQBN & a & b & c & $\Phi$\\
+        0000 & 0 & 0 & 0 & 0 \\
+        0001 & 0 & 0 & 1 & 0 \\
+        0010 & 0 & 1 & 0 & 0 \\
+        0011 & 0 & 1 & 1 & 0 \\
+        0100 & 1 & 0 & 0 & 0 \\
+        0101 & 1 & 0 & 1 & 0 \\
+        0110 & 1 & 1 & 0 & 0 \\
+        0111 & 1 & 1 & 1 & 0 \\
+        1000 & 0 & 0 & 0 & 0 \\
+        1001 & 0 & 0 & 1 & 0 \\
+        1010 & 0 & 1 & 0 & 0 \\
+        1011 & 0 & 1 & 1 & 0 \\
+        1100 & 1 & 0 & 0 & 0 \\
+        1101 & 1 & 0 & 1 & 0 \\
+        1110 & 1 & 1 & 0 & 0 \\
+        1111 & 1 & 1 & 1 & 1 \\
+    \end{tabular}
+}
+\section{Junktoren, Normalformen}
+\subsection{logische Äquivalenzen mit Junktoren}
+    Finden Sie eine Formel, die logisch äquivalent zu A $\oplus$ B ist und nur
+    die Junktoren $\neg$, $\wedge$, $\vee$ enthält. (Hierbei ist $\oplus$ das
+    exklusive Oder.) Hinweis: Arbeiten Sie mit einer Wahrheitstafel.
+{
+    \tiny
+    \begin{tabular}{ccccc}
+        AB & A $\oplus$ B & ($\neg$A)$\wedge$B & A$\wedge$($\neg$B) & 
+        (($\neg$A)$\wedge$B)$\vee$(A$\wedge$($\neg$B))\\
+        00 & 0 & 0 & 0 & 0\\
+        01 & 1 & 1 & 0 & 1\\
+        10 & 1 & 0 & 1 & 1\\
+        11 & 0 & 0 & 0 & 0
+    \end{tabular}
+}
+\subsection{Sheffer-Operator}
+Stellen Sie zunächst den Junktor $\neg$ und anschließend den Junktor $\wedge$
+mit dem Sheffer-Operator | NAND-Operator dar.\\
+{
+    \tiny
+    \begin{tabular}{ccc}
+        A & A|A & ($\neg$A)\\
+        0 & 1 & 1\\
+        1 & 0 & 0
+    \end{tabular}
+    \begin{tabular}{ccc}
+        AB & (A|B)|(A|B) & A$\wedge$B\\
+        00 & 0 & 0 \\
+        01 & 0 & 0 \\
+        10 & 0 & 0 \\
+        11 & 1 & 1
+    \end{tabular}
+}
+\subsection{DNF und KNF}
+Stellen Sie zu der folgenden Wahrheitstafel eine aussagenlogische Formel $\phi$ in
+disjunktiver und eine in konjunktiver Normalform auf.\\
+{
+    \tiny
+    \begin{tabular}{cccccccc}
+        xyz & 
+        $\phi$ & 
+        min\textsubscript{1}: ($\neg$a)$\wedge$y$\wedge$($\neg$z) & 
+        min\textsubscript{2}: ($\neg$a)$\wedge$y$\wedge$z & 
+        min\textsubscript{3}: x$\wedge$($\neg$y)$\wedge$($\neg$z) & 
+        min\textsubscript{4}: x$\wedge$y$\wedge$($\neg$x) & 
+        min\textsubscript{5}: x$\wedge$y$\wedge$z & 
+        min\textsubscript{1}$\vee$min\textsubscript{2}$\vee$min\textsubscript{3}$\vee$min\textsubscript{4}$\vee$min\textsubscript{5}\\
+        000 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+        001 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+        010 & 1 & 1 & 0 & 0 & 0 & 0 & 1\\
+        011 & 1 & 0 & 1 & 0 & 0 & 0 & 1\\
+        100 & 1 & 0 & 0 & 1 & 0 & 0 & 1\\
+        101 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+        110 & 1 & 0 & 0 & 0 & 1 & 0 & 1\\
+        111 & 1 & 0 & 0 & 0 & 0 & 1 & 1
+    \end{tabular}
+    \begin{tabular}{ccccccc}
+        ->&
+        max\textsubscript{1}: ($\neg$x)$\vee$y$\vee$($\neg$z)&
+        max\textsubscript{2}: ($\neg$x)$\vee$y$\vee$z&
+        max\textsubscript{3}: x$\vee$($\neg$y)$\vee$($\neg$z)&
+        max\textsubscript{4}: x$\vee$y$\vee$($\neg$z)&
+        max\textsubscript{5}: x$\vee$y$\vee$x&
+        max\textsubscript{1}$\wedge$max\textsubscript{2}$\wedge$max\textsubscript{3}$\wedge$max\textsubscript{4}$\wedge$max\textsubscript{5}\\
+        | & 1 & 1 & 1 & 1 & 0 & 0 \\
+        | & 1 & 1 & 1 & 0 & 1 & 0 \\
+        | & 1 & 1 & 1 & 1 & 1 & 1 \\
+        | & 1 & 1 & 0 & 1 & 1 & 1 \\
+        | & 1 & 0 & 1 & 1 & 1 & 1 \\
+        | & 0 & 1 & 1 & 1 & 1 & 0 \\
+        | & 1 & 1 & 1 & 1 & 1 & 1 \\
+        | & 1 & 1 & 1 & 1 & 1 & 1 
+    \end{tabular}
+}
+\section{Prädikate und Quantoren}
+\subsection{Prädikatübersetzung}
+es sei P(x) ein Prädikat und M = {a, b, c} die Grundmenge zu x. Zu den folgenden
+Aussagen sollen logisch äquivalente aussagen angegeben werden, die keine Quantoren
+enthalten.
+a) 
