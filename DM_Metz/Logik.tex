@@ -280,4 +280,69 @@ disjunktiver und eine in konjunktiver Normalform auf.\\
 es sei P(x) ein Prädikat und M = {a, b, c} die Grundmenge zu x. Zu den folgenden
 Aussagen sollen logisch äquivalente aussagen angegeben werden, die keine Quantoren
 enthalten.
-a) 
+{\renewcommand{\labelenumi}{\alph{enumi}}
+\begin{enumerate}
+    \item $\forall$xP(x) = P(a)$\wedge$P(b)$\wedge$P(c)
+    \item $\exists$xP(x) = P(a)$\vee$P(b)$\vee$P(c)
+    \item $\neg\forall$P(x) = P(a)$\vee$P(b)$\vee$P(c)
+    \item $\neg\exists$xP(x) = P(a)$\wedge$P(b)$\wedge$P(c)
+    \item $\forall$X$\neg$P(x) = P(a)$\vee$P(b)$\vee$P(c)
+    \item $\exists$x$\neg$P(x) = P(a)$\vee$P(b)$\vee$P(c)
+\end{enumerate}
+\subsection{x+1>2 Wahrheit}
+\begin{enumerate}
+    \item P(0) = Wahr, da 0+1>2*0
+    \item P(-1) = Wahr, weil -1 > -2
+    \item P(1) = falsch, weil 1+1 > 2*1 unwahr ist.
+    \item $\exists$xP(x) = Wahr, weil es ein x gibt, für dass diese Aussage
+    zutrifft.
+    \item $\forall$xP(x) = Falsch, weil es mindestens ein x gibt, für dass diese Aussage nicht zutrifft.
+    \item $\exists$x$\neg$P(x) = Wahr, weil es mindestens ein x gibt, für dass diese Aussage zutrifft.
+    \item $\forall$x$\neg$P(x) = Falsch, weil es mindestens ein x gibt, für dass diese Aussage nicht zutrifft.
+    \item $\neg\forall$xP(x) = Wahr, weil es mindestens ein x gibt, für dass diese Aussage zutrifft.
+\end{enumerate}
+\subsection{Studenten}
+Das Prädikat P(x,y) stehe für "Student/Studentin" x hat die Vorlesung y 
+besucht." Die Grundmenge zu x seien alle Studierenden und die Grundmenge
+zu y seien alle Vorlesungen des Fachbereichs MNI. Schreiben Sie die
+folgenden Aussagen in deutschen Sätzen auf.
+\begin{enumerate}
+    \item $\exists$x$\exists$yP(x,y) = Es existieren Studenten, die zu
+    bestimmten Vorlesungen gegangen sind.
+    \item $\exists$x$\forall$yP(x,y) = Es existieren Studenten, die zu
+    allen Vorlesungen gegangen sind.
+    \item $\exists$y$\forall$xP(x,y) = Es existieren Vorlesungen, zu
+    denen alle Studenten gegangen sind.
+    \item $\forall$x$\exists$yP(x,y) = Alle Studenten sind zu bestimmten
+    Vorlesungen gegangen.
+    \item $\forall$y$\exists$xP(x,y) = Zu allen Vorlesungen existieren
+    Studenten, die diese besucht haben.
+    \item $\forall$x$\forall$yP(x,y) = Alle Studenten sind zu allen
+    Vorlesungen gegangen.
+\end{enumerate}
+\subsection{x ein Teiler y}
+Es sei P{x,y} das Prädikat "x ist ein Teiler von y". Die Grundmengen für x und
+y sei die Menge der natürlichen Zahlen $\mathbb{N}$={1,2,3,...}. Welcher der
+folgenden Ausdrücke ist eine Aussage? Welche der Aussagen ist wahr, welche
+falsch\\
+{
+    \tiny
+    \begin{tabular}{cccc}
+        Aufgabe & Aussage? & Wahr? & 
+        Erläuterung(keine Aussage oder nicht wahr)\\
+        P(10,y) & nein & - & freie Variable y\\
+        P(x,100) & nein & - & freie Variable x\\
+        $\forall$xP(x,y) &  nein & - & freie Variable y\\
+        $\exists$xP(x,7) & ja & wahr & -\\
+        $\forall$x$\exists$yP(x,y) & ja & wahr & -\\
+        P(3,9) & ja & wahr & -\\
+        P(3,7) & ja & falsch & 7 ist durch 3 nicht ohne Rest teilbar\\
+        $\exists$xP(x,9) & ja & wahr & -\\
+        $\forall$P(x,9) & ja & falsch & Es existieren für x werte, durch die
+        nicht ohne Rest geteilt werden kann\\
+        $\exists$x$\forall$yP(x,y) & ja & wahr & -\\
+        $\forall$xP(x,x) & ja & wahr & -\\
+        $\forall$yP(1,y) & ja & wahr & -
+    \end{tabular}
+}
+}%scope delimiter of {\renewcommand{\labelenumi}{\alph{enumi}}
